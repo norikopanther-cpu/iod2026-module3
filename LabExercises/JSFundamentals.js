@@ -54,5 +54,17 @@ if (1) console.log('positive is true')
 // Seven types of falsy values: 0, -0, null, undefined, NaN, false, and "" (empty string)
 
 //Q4
+//Full operators:
+let a = 2, b = 3;
+let result = `${a} + ${b} is `;
 
+if (a + b < 10) {
+  result += 'less than 10';
+} else {
+  result += 'greater than 10';
+}
+//Ternary operator:
+let resultTernary = `${a} + ${b} is ` + ((a + b < 10) ? 'less than 10' : 'greater than 10');
+console.log(result);
+console.log(resultTernary);
     
