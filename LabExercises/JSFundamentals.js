@@ -51,4 +51,8 @@ if ("0") console.log('#2 zero is true')
 if (null) console.log('null is true')
 if (-1) console.log('negative is true')
 if (1) console.log('positive is true')
+// Seven types of falsy values: 0, -0, null, undefined, NaN, false, and "" (empty string)
+
+//Q4
+
     
