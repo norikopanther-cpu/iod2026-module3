@@ -1,3 +1,16 @@
+//Notes on Objects 
+const user = {
+    name: 'Alice',
+    printThis() {
+        console.log(this);
+        return this;  
+    },
+    printGreeting() {
+        console.log(`Hello, my name is ${this.name}`);
+    },
+}
+user.printThis().printGreeting(); // Logs the user object and the greeting
+
 //Q1
 console.log("" + 1 + 0);
 console.log("" - 1 + 0);
@@ -152,7 +165,52 @@ const inigo = {
 inigo.greeting(westley);
 inigo.greeting(rugen);
 
+//Q7
+const basketballGame = { 
+  score: 0, 
+  fouls: 3,
+  freeThrow() { this.score++; return this; }, 
+  basket() { this.score += 2; return this; }, 
+  threePointer() { this.score += 3; return this; }, 
+  foul() { 
+    this.fouls++; 
+    console.log('Foul count: ' + this.fouls);
+    return this;
+  },
+  halfTime() { 
+    console.log('Halftime score is ' + this.score + ' with ' + this.fouls + ' fouls'); return this; 
+    },
+  fullTime() {
+    console.log('Fulltime score is ' + this.score + ' with ' + this.fouls + ' fouls'); return this;  
+  } 
+};
+  basketballGame.basket().freeThrow().freeThrow().basket().threePointer().foul().halfTime().fullTime();
 
+//Q8
+const sydney = { 
+  name: 'Sydney', 
+  population: 5_121_000, 
+  state: 'NSW', 
+  founded: '26 January 1788', 
+  timezone: 'Australia/Sydney' 
+};
+for (let key in sydney) {
+  console.log(`${key}: ${sydney[key]}`);
+};
 
+const christchurch = {
+  name: 'Christchurch',
+  population: 389_300,
+  region: 'Canterbury',
+  country: 'New Zealand',
+  founded: '31 July 1856',
+  timezone: 'Pacific/Auckland'
+};
 
+function printCityInfo(city) {
+  for (let key in city) {
+    console.log(`${key}: ${city[key]}`);
+  }
+}
+printCityInfo(christchurch);
 
