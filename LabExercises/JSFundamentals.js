@@ -63,8 +63,96 @@ if (a + b < 10) {
 } else {
   result += 'greater than 10';
 }
+console.log(result);
+
+//Full arrow function:
+const resultArrowFunction = (a, b) => {
+  let result = `${a} + ${b} is `;
+  if (a + b < 10) {
+    result += 'less than 10';
+  } else {
+    result += 'greater than 10';
+  }
+  return result;
+};
+console.log(resultArrowFunction(a, b));
+
 //Ternary operator:
 let resultTernary = `${a} + ${b} is ` + ((a + b < 10) ? 'less than 10' : 'greater than 10');
-console.log(result);
 console.log(resultTernary);
+
+//Q5 Function Expression Syntax:
+function getGreeting (name) {
+    return 'Hello ' + name + '!';
+}
+console.log(getGreeting('Alice'));
+
+//Arrow Function Syntax:
+const getGreetingArrow = (name) => {
+    return 'Hello ' + name + '!';
+}
+console.log(getGreetingArrow('Bob'));
+
+//Ternary Operator Syntax:
+const getGreetingTernary = (name) => 'Hello ' + name + '!';
+console.log(getGreetingTernary('Charlie')); 
+
+//Q6
+const westley = {
+    firstName: 'Westley',
+    lastName: 'Smith',
+    numFingers: 5,
+}
+
+const rugen = {
+    firstName: 'Rugen',
+    lastName: 'Black',
+    numFingers: 6,
+}
+
+const inigo = {
+    firstName: 'Inigo',
+    lastName: 'Montoya',
+    numFingers: 5,
+
+    //Regular function syntax:
+    getCatchPhrase(person) {
+      if (person.numFingers === 6) {
+      return 'You killed my father. Prepare to die.';
+    } else {
+      return 'Nice to meet you.';
+    }
+    },
+
+    //Arrow function syntax:
+    getCatchPhraseArrow: (person) => {
+      if (person.numFingers === 6) {
+      return 'You killed my father. Prepare to die.';
+    } else {
+      return 'Nice to meet you.';
+    }
+    },   
+
+    //Ternary operator syntax:
+     getCatchPhraseTernary: (person) => 
+     person.numFingers === 6 
+     ? 'You killed my father. Prepare to die.' 
+     : 'Nice to meet you.',
+
+    greeting(person) {
+    let greeting = 
+    `Hello ${person.firstName} ${person.lastName}, my name is ${this.firstName} ${this.lastName}. `;
     
+    console.log("Regular: " + greeting + this.getCatchPhrase(person));
+    console.log("Arrow: " + greeting + this.getCatchPhraseArrow(person));
+    console.log("Ternary: " + greeting + this.getCatchPhraseTernary(person));
+  },
+};
+
+inigo.greeting(westley);
+inigo.greeting(rugen);
+
+
+
+
+
