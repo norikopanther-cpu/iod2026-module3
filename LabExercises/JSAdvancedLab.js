@@ -88,3 +88,28 @@ printMe = debounce(printMe, 1000);
 setTimeout(() => printMe('first call'), 100);
 setTimeout(() => printMe('second call'), 200);
 setTimeout(() => printMe('third call'), 300);
+
+
+//Q4
+//The Fibonacci sequence of numbers is a famous pattern where the next number in the sequence is the sum of the previous 
+// a) Write a function printFibonacci() using setInterval that outputs a number in the Fibonacci sequence every second.
+function printFibonacci() {
+    let a = 1, b = 1;
+    console.log(a); // print the first number
+    setInterval(() => {
+        console.log(b); // print the next number
+        [a, b] = [b, a + b]; // new a = old b, new b = old a + old b
+    }, 1000);
+}
+
+// b) Write a new version printFibonacciTimeouts() that uses nested setTimeout calls to do the same thing.
+/* function printFibonacciTimeouts() {
+    let a = 1, b = 1;
+    console.log(a); // print the first number
+    function printNext() {
+        console.log(b); // print the next number
+        [a, b] = [b, a + b]; // update a and b to the next two numbers in the sequence
+        setTimeout(printNext, 1000); // schedule the next call
+    }
+    setTimeout(printNext, 1000); // start the first call after 1 second
+}
